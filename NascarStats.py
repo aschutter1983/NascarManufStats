@@ -169,7 +169,7 @@ with boxdata:
         st.plotly_chart(fig,use_container_width=True)
 
         st.subheader('Overview Manufacturer Finish Position')
-        fig4 = px.violin(df_master.loc[(df_master['series_id']==1)],y='ps',x='race_name',color='manf_name')
+        fig4 = px.box(df_master.loc[(df_master['series_id']==1)],y='ps',x='race_name',color='manf_name')
         st.plotly_chart(fig4,use_container_width=True)
 
         
