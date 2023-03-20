@@ -76,7 +76,10 @@ list_of_teamcumdf = []
 def GetOwnersPoints(team,race):
     data_mfg = df_master.loc[(df_master['manf_name'] ==f'{team}') & (df_master['race_id']==race)]
     data_mfg = data_mfg[data_mfg['ps']==data_mfg['ps'].min()]
-    data_mfg['mfg_pts']= 41 - data_mfg['ps']  #1=40,2=39,3=38...   41-ps
+    if data_mfg['ps'] == 1 then:
+        data_mfg['mfg_pts']= 40
+    else:
+        data_mfg['mfg_pts']= 46 - data_mfg['ps']  #1=40,2=35, 3=34, 33,32...
     return data_mfg
 
 for race in races:
