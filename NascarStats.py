@@ -77,13 +77,13 @@ def PointsCalc(row):
     if row['ps'] == 1:
         val = 40
     else:
-        val = 36-row['ps']
+        val = 37-row['ps']
     return val
 
 def GetOwnersPoints(team,race):
     data_mfg = df_master.loc[(df_master['manf_name'] ==f'{team}') & (df_master['race_id']==race)]
     data_mfg = data_mfg[data_mfg['ps']==data_mfg['ps'].min()]
-    data_mfg['mfg_pts'] = df_mfg.apply(PointsCalc,axis=1)
+    data_mfg['mfg_pts'] = data_mfg.apply(PointsCalc,axis=1)
     return data_mfg
 
 for race in races:
@@ -200,12 +200,10 @@ with boxdata:
         [data-testid="stMetricLabel"] > div:nth-child(1) {
             justify-content: center;
         }
-
         /*center metric value*/
         [data-testid="stMetricValue"] > div:nth-child(1) {
             justify-content: center;
         }
-
         /*center metric value*/
         [data-testid="stMetricValue"] > div:nth-child(1) {
             justify-content: center;
